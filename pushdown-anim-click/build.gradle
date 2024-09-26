@@ -41,6 +41,3 @@ publishing {
 dependencies {
     compile 'com.android.support:appcompat-v7:27.1.1'
 }
-
-apply from: "$project.rootDir/pushlibrary.gradle"
-
