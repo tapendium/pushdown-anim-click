@@ -1,5 +1,15 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    }
+}
+
 apply plugin: 'maven-publish'
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 27
@@ -40,4 +50,17 @@ publishing {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:27.1.1'
+}
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId 'com.thekhaeng'
+                artifactId 'pushdown-anim-click'
+            }
+        }
+    }
 }
